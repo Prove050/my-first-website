@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 17025 食品實驗室文件體系視覺化報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f9fafb;
+        }
+        .a4-container {
+            width: 100%;
+            max-width: 800px;
+            min-height: 1123px; /* A4 aspect ratio */
+            padding: 2rem;
+            margin: 1rem auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .pyramid-level {
+            border-left: 4px solid;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .pyramid-level::before {
+            content: attr(data-level);
+            position: absolute;
+            left: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.25rem;
+        }
+        .level-1 { border-color: #3b82f6; }
+        .level-1::before { background-color: #3b82f6; }
+        .level-2 { border-color: #60a5fa; }
+        .level-2::before { background-color: #60a5fa; }
+        .level-3 { border-color: #93c5fd; }
+        .level-3::before { background-color: #93c5fd; }
+        .level-4 { border-color: #bfdbfe; }
+        .level-4::before { background-color: #bfdbfe; }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .a4-container {
+                width: 100%;
+                min-height: initial;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="a4-container">
+        <!-- Header -->
+        <header class="text-center mb-8 border-b-2 pb-4 border-gray-200">
+            <h1 class="text-3xl font-bold text-gray-800">ISO/IEC 17025 食品實驗室文件體系解析</h1>
+            <p class="text-lg text-gray-600 mt-2">One-Page Visual Summary</p>
+        </header>
+
+        <!-- Introduction -->
+        <p class="text-base text-gray-700 mb-10 text-center max-w-2xl mx-auto">
+            本報告旨在剖析一個大型食品檢驗實驗室為取得並維持 ISO/IEC 17025 認證，所需建立的龐大且系統化的文件架構。此架構可視為一個四層金字塔，由高階政策延伸至基礎執行紀錄，層層相扣。
+        </p>
+
+        <!-- Pyramid Section -->
+        <div class="space-y-10">
+            <!-- Level 1 -->
+            <div class="pyramid-level level-1" data-level="1">
+                <div class="ml-8">
+                    <h2 class="text-2xl font-bold text-gray-800">品質手冊 (Quality Manual)</h2>
+                    <p class="text-sm font-semibold text-blue-500 mb-3">我們的憲法 (約 1 份)</p>
+                    <div class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600">
+                        <div><strong class="text-gray-800">▶ 角色定位：</strong>實驗室的最高指導原則，是整個品質系統的基石。</div>
+                        <div><strong class="text-gray-800">▶ 核心內容：</strong>闡述品質政策與目標、宣告對公正性與保密性的承諾、概述組織架構與職責。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="pyramid-level level-2" data-level="2">
+                 <div class="ml-8">
+                    <h2 class="text-2xl font-bold text-gray-800">管理/技術程序書 (Procedures)</h2>
+                    <p class="text-sm font-semibold text-blue-400 mb-3">我們的管理辦法 (約 20-30 份)</p>
+                    <div class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600">
+                        <div><strong class="text-gray-800">▶ 角色定位：</strong>針對標準中特定「管理」和「技術」條文所制定的具體作法。</div>
+                        <div>
+                            <strong class="text-gray-800">▶ 核心內容：</strong>
+                            <ul class="list-disc list-inside mt-1">
+                                <li><span class="font-semibold">管理類：</span>文件管制、內部稽核、矯正措施、人員訓練等。</li>
+                                <li><span class="font-semibold">技術類：</span>設備管理、不確定度評估、樣品監管鏈管理等。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="pyramid-level level-3" data-level="3">
+                 <div class="ml-8">
+                    <h2 class="text-2xl font-bold text-gray-800">標準作業程序 (SOPs)</h2>
+                    <p class="text-sm font-semibold text-blue-300 mb-3">我們的執行方法 (約 150+ 份)</p>
+                    <div class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600">
+                         <div><strong class="text-gray-800">▶ 角色定位：</strong>文件體系中數量最龐大、最核心的部分，詳細描述「單一項」檢驗的具體執行步驟。</div>
+                         <div>
+                            <strong class="text-gray-800">▶ 食品檢驗範例：</strong>
+                            <ul class="list-disc list-inside mt-1">
+                                <li><span class="font-semibold">微生物檢驗：</span>總生菌數、大腸桿菌群、沙門氏菌檢驗 SOP。</li>
+                                <li><span class="font-semibold">化學檢驗：</span>多重農藥殘留、重金屬、塑化劑檢測 SOP。</li>
+                                <li><span class="font-semibold">儀器操作：</span>HPLC、GC-MS 等精密儀器操作與維護 SOP。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level 4 -->
+            <div class="pyramid-level level-4" data-level="4">
+                 <div class="ml-8">
+                    <h2 class="text-2xl font-bold text-gray-800">表單與紀錄 (Forms & Records)</h2>
+                    <p class="text-sm font-semibold text-blue-200 mb-3">我們的證據 (約 50+ 份)</p>
+                    <div class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-600">
+                        <div><strong class="text-gray-800">▶ 角色定位：</strong>執行前三層文件後所產生的「證據」，確保所有活動皆可追溯、可查證。</div>
+                        <div>
+                            <strong class="text-gray-800">▶ 核心內容：</strong>
+                            <ul class="list-disc list-inside mt-1">
+                                 <li><span class="font-semibold">系統紀錄：</span>內部稽核查檢表、管理審查會議紀錄、訓練紀錄。</li>
+                                 <li><span class="font-semibold">技術紀錄：</span>樣品監管鏈紀錄單、原始數據紀錄單、儀器履歷、檢驗報告。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="mt-12 pt-6 border-t-2 border-gray-200">
+            <h3 class="text-xl font-bold text-gray-800 text-center">總結 (Key Takeaway)</h3>
+            <p class="text-base text-gray-700 mt-2 text-center">
+                ISO 17025 認證並非單一事件，而是一套完整、系統化且環環相扣的文件體系。對於大型食品實驗室，為涵蓋其廣泛的檢驗範圍，所需建立與維護的文件總數**保守估計將超過 200 份**。這不僅是符合規範的要求，更是其展現技術能力、確保數據品質與贏得客戶信任的根本基礎。
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 pt-4 text-center text-xs text-gray-500">
+            <p>報告日期：2025年7月16日</p>
+        </footer>
+    </div>
+</body>
+</html>
